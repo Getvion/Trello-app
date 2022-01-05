@@ -1,0 +1,17 @@
+.tasks {
+  height: auto;
+  &__empty {
+    margin: 5px;
+    padding: 5px;
+  }
+}
+
+.task {
+  background-color: #fff;
+  border-radius: 6px;
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 0 1px 0 #091e4240;
+  cursor: pointer;
+  min-height: 30px;
+}
