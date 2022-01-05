@@ -6,11 +6,15 @@
   transition: all 0.3s ease-in-out;
 
   &__input {
-    border: 1px solid rgb(141, 141, 141);
+    max-width: 180px;
+    max-height: 25px;
+
     padding: 5px 3px 5px 5px;
+    border: 2px solid rgb(141, 141, 141);
     outline: none;
-    font-size: 14px;
+    font-size: 15px;
     border-radius: 5px;
+    background-color: transparent;
 
     &:focus {
       border: 2px solid #000;
@@ -24,11 +28,10 @@
     cursor: pointer;
     border-radius: 5px;
     font-size: 15px;
-    transition: all 0.2s;
+    transition: all 0.1s;
 
     &:active {
-      transform: scale(0.97);
-      background-color: darken($color: #d4d4d4, $amount: 0);
+      transform: scale(0.95);
     }
   }
 }
