@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Task from './Task';
-
 import s from './Tasks.module.scss';
 
 function Tasks({ tasks }) {
@@ -9,7 +7,11 @@ function Tasks({ tasks }) {
     <div className={s.tasks}>
       {tasks && tasks.length ? (
         tasks.map((task) => {
-          return <Task key={task.id} task={task.text} />;
+          return (
+            <div key={task.id} className={s.task}>
+              {task.text}
+            </div>
+          );
         })
       ) : (
         <div className={s.tasks__empty}>
