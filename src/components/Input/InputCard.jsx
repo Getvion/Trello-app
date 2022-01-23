@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import storeApi from '../../data/storeApi';
 
 import s from './Input.module.scss';
@@ -9,12 +9,22 @@ export default function InputContainer({ listId, type }) {
 
   const { addMoreCard, addMoreList } = useContext(storeApi);
 
-  const handleOnChange = (e) => {
-    setTitle(e.target.value);
+  const inputEl = useRef();
+
+  const onClickAtAdd = () => {
+    setOpen(!open);
+    setTimeout(() => inputEl.current.focus(), 0);
   };
 
-  const handleBtnConfirm = (e) => {
-    console.log(e);
+  const onKeyDownCheck = (e) => {
+    if (e.key === 'Enter') {
+      handleBtnConfirm();
+    }
+  };
+
+  const handleBtnConfirm = () => {
+    if (!title) return alert('please add title');
+
     if (type === 'card') {
       addMoreCard(title, listId);
       setTitle('');
@@ -32,10 +42,11 @@ export default function InputContainer({ listId, type }) {
         <div>
           <div className={s.card}>
             <input
-              onChange={handleOnChange}
-              value={title}
               className={s.input}
+              ref={inputEl}
               placeholder={type === 'card' ? 'Enter card title...' : 'Enter list title...'}
+              onChange={(e) => setTitle(e.target.value)}
+              onKeyDown={(e) => onKeyDownCheck(e)}
             />
           </div>
           <div className={s.confirm}>
@@ -48,7 +59,7 @@ export default function InputContainer({ listId, type }) {
           </div>
         </div>
       ) : (
-        <div className={s.addCard} onClick={() => setOpen(!open)}>
+        <div className={s.addCard} onClick={onClickAtAdd}>
           <p className={s.addCardText}>{type === 'card' ? 'Add card' : 'Add another List'}</p>
         </div>
       )}

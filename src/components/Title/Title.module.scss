@@ -1,0 +1,44 @@
+.titleContainer {
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+  min-height: 3rem;
+}
+
+.title {
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.input {
+  padding: 0.4rem;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  outline: none;
+
+  &:focus {
+    border: 2px solid #111;
+  }
+}
+
+.btnConfirm {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.1s;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: darken(#fff, 10%);
+  }
+  &:focus {
+    transform: scale(0.98);
+  }
+}

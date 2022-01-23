@@ -2,6 +2,7 @@ import React from 'react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
 import Card from './Card';
+import Title from '../Title/Title';
 import InputCard from '../Input/InputCard';
 
 import s from './List.module.scss';
@@ -13,7 +14,7 @@ function List({ list, index }) {
         {(provided) => (
           <div ref={provided.innerRef} {...provided.dragHandleProps} {...provided.draggableProps}>
             <div className={s.root}>
-              <h3 className={s.title}>{list.title}</h3>
+              <Title title={list.title} listId={list.id} />
               <Droppable droppableId={list.id}>
                 {(provided) => {
                   return (
