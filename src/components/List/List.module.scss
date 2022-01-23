@@ -1,0 +1,30 @@
+.listWrapper {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.root {
+  width: 300px;
+  background-color: #ebecf0;
+  margin: 1rem;
+  border-radius: 5px;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.cardContainer {
+  margin-top: 2rem;
+}
+
+.title {
+  padding: 1rem 0 0 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.card {
+  padding: 0.6rem 0.6rem 0.6rem 1.4rem;
+  margin: 0.4rem;
+  background-color: #fff;
+  border-radius: 5px;
+  border-bottom: 1px solid #aaa;
+}
